@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">MineCraft Installer</string>
+    <string name="install_button_text">Install Minecraft Content</string>
+    <string name="retry_button_text">Try Again</string>
+    <string name="status_ready">Ready to install Minecraft content!</string>
+    <string name="status_installing">Installing %1$s...</string>
+    <string name="status_success">%1$s installed successfully!</string>
+    <string name="status_error">Installation failed: %1$s</string>
+    <string name="permission_title">Permission Needed</string>
+    <string name="permission_message">This app needs access to your device storage to install Minecraft content. Please select your device\'s main storage when prompted.</string>
+    <string name="unsupported_file_title">Unsupported File</string>
+    <string name="unsupported_file_message">This app only supports .mcworld and .mcpack files. Please select a valid Minecraft content file.</string>
+    <string name="grant_permission">Grant Permission</string>
+    <string name="cancel">Cancel</string>
+    <string name="ok">OK</string>
+    <string name="info_text">Supports .mcworld and .mcpack files\nSafe for kids - no ads or unwanted access</string>
+</resources>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+
+    <!-- Main block shape -->
+    <path
+        android:fillColor="@color/primary_color"
+        android:pathData="M8,8 L40,8 L40,40 L8,40 Z" />
+
+    <!-- Top face -->
+    <path
+        android:fillColor="@color/accent_color"
+        android:pathData="M8,8 L40,8 L44,4 L12,4 Z" />
+
+    <!-- Right face -->
+    <path
+        android:fillColor="@color/primary_dark"
+        android:pathData="M40,8 L40,40 L44,36 L44,4 Z" />
+
+    <!-- Grid lines for texture -->
+    <path
+        android:strokeColor="@color/primary_dark"
+        android:strokeWidth="1"
+        android:pathData="M16,8 L16,40 M24,8 L24,40 M32,8 L32,40 M8,16 L40,16 M8,24 L40,24 M8,32 L40,32" />
+</vector>

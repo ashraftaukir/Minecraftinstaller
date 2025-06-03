@@ -1,0 +1,5 @@
+com.acimis.minecraftinstaller.test.app-core-1.6.1-0 C:\Users\taukir\.gradle\caches\8.10.2\transforms\08904cf67f3e7b9b4f80ef08a521e068\transformed\core-1.6.1\res
+com.acimis.minecraftinstaller.test.app-androidTest-1 D:\MineCraftInstaller\app\build\generated\res\resValues\androidTest\debug
+com.acimis.minecraftinstaller.test.app-mergeDebugAndroidTestResources-2 D:\MineCraftInstaller\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
+com.acimis.minecraftinstaller.test.app-mergeDebugAndroidTestResources-3 D:\MineCraftInstaller\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
+com.acimis.minecraftinstaller.test.app-debugAndroidTest-4 D:\MineCraftInstaller\app\build\intermediates\merged_res\debugAndroidTest\mergeDebugAndroidTestResources
