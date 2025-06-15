@@ -1,297 +1,248 @@
 package com.acimis.minecraftinstaller;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.ObjectAnimator;
-import android.content.BroadcastReceiver;
-import android.content.Context;
+import android.app.Activity;
 import android.content.Intent;
-import android.content.IntentFilter;
-import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
-import android.provider.OpenableColumns;
+import android.os.Environment;
+import android.provider.DocumentsContract;
 import android.view.View;
-import android.view.animation.AccelerateDecelerateInterpolator;
-import android.widget.Button;
-import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
-import androidx.appcompat.app.AlertDialog;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.localbroadcastmanager.content.LocalBroadcastManager;
+import androidx.documentfile.provider.DocumentFile;
+import com.google.android.material.button.MaterialButton;
+import com.minecraftcompanion.R;
+
+import org.apache.commons.compress.archivers.zip.ZipArchiveEntry;
+import org.apache.commons.compress.archivers.zip.ZipArchiveInputStream;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 
 public class MainActivity extends AppCompatActivity {
+    private static final String MINECRAFT_PACKAGE = "com.mojang.minecraftpe";
+    private static final String MINECRAFT_WORLDS_PATH = "games/com.mojang/minecraftWorlds";
+    private static final String MINECRAFT_RESOURCE_PACKS_PATH = "games/com.mojang/resource_packs";
 
-    private PermissionHelper permissionHelper;
-    private ImageView mascotImageView;
-    private TextView statusTextView;
-    private Button installButton;
-    private Button retryButton;
-
-    private boolean isInstalling = false;
-    private ObjectAnimator mascotAnimator;
-
-    private BroadcastReceiver installReceiver = new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            String action = intent.getAction();
-
-            if (Constants.ACTION_INSTALL_COMPLETE.equals(action)) {
-                String fileName = intent.getStringExtra("file_name");
-                String fileType = intent.getStringExtra("file_type");
-                onInstallSuccess(fileName, fileType);
-            } else if (Constants.ACTION_INSTALL_ERROR.equals(action)) {
-                String error = intent.getStringExtra("error");
-                onInstallError(error);
-            }
-        }
-    };
+    private ActivityResultLauncher<Intent> openDocumentLauncher;
+    private ActivityResultLauncher<Intent> openDirectoryLauncher;
+    private Uri minecraftDirectoryUri;
+    private ProgressBar progressBar;
+    private TextView statusText;
+    private MaterialButton installButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        initializeViews();
-        setupPermissionHelper();
-        setupClickListeners();
-        startMascotAnimation();
+        progressBar = findViewById(R.id.progressBar);
+        statusText = findViewById(R.id.statusText);
+        installButton = findViewById(R.id.installButton);
 
-        // Handle file shared to app
-        handleIncomingIntent(getIntent());
+        installButton.setOnClickListener(v -> openFilePicker());
+
+        setupActivityResultLaunchers();
     }
 
-    @Override
-    protected void onNewIntent(Intent intent) {
-        super.onNewIntent(intent);
-        handleIncomingIntent(intent);
+    private void setupActivityResultLaunchers() {
+        openDocumentLauncher = registerForActivityResult(
+                new ActivityResultContracts.StartActivityForResult(),
+                result -> {
+                    if (result.getResultCode() == Activity.RESULT_OK && result.getData() != null) {
+                        Uri uri = result.getData().getData();
+                        if (uri != null) {
+                            handleSelectedFile(uri);
+                        }
+                    }
+                }
+        );
+
+        openDirectoryLauncher = registerForActivityResult(
+                new ActivityResultContracts.StartActivityForResult(),
+                result -> {
+                    if (result.getResultCode() == Activity.RESULT_OK && result.getData() != null) {
+                        minecraftDirectoryUri = result.getData().getData();
+                        if (minecraftDirectoryUri != null) {
+                            getContentResolver().takePersistableUriPermission(
+                                    minecraftDirectoryUri,
+                                    Intent.FLAG_GRANT_READ_URI_PERMISSION | Intent.FLAG_GRANT_WRITE_URI_PERMISSION
+                            );
+                            updateStatus("Minecraft directory access granted!");
+                        }
+                    }
+                }
+        );
     }
 
-    private void initializeViews() {
-        mascotImageView = findViewById(R.id.mascot_image);
-        statusTextView = findViewById(R.id.status_text);
-        installButton = findViewById(R.id.install_button);
-        retryButton = findViewById(R.id.retry_button);
-
-        // Set initial state
-        statusTextView.setText("Ready to install Minecraft content!");
-        retryButton.setVisibility(View.GONE);
-    }
-
-    private void setupPermissionHelper() {
-        permissionHelper = new PermissionHelper(this);
-    }
-
-    private void setupClickListeners() {
-        installButton.setOnClickListener(v -> {
-            if (!isInstalling) {
-                selectFile();
-            }
-        });
-
-        retryButton.setOnClickListener(v -> {
-            retryButton.setVisibility(View.GONE);
-            installButton.setVisibility(View.VISIBLE);
-            statusTextView.setText("Ready to install Minecraft content!");
-            startMascotAnimation();
-        });
-    }
-
-    private void startMascotAnimation() {
-        if (mascotAnimator != null) {
-            mascotAnimator.cancel();
-        }
-
-        // Simple bounce animation
-        mascotAnimator = ObjectAnimator.ofFloat(mascotImageView, "translationY", 0f, -30f, 0f);
-        mascotAnimator.setDuration(2000);
-        mascotAnimator.setRepeatCount(ObjectAnimator.INFINITE);
-        mascotAnimator.setInterpolator(new AccelerateDecelerateInterpolator());
-        mascotAnimator.start();
-    }
-
-    private void stopMascotAnimation() {
-        if (mascotAnimator != null) {
-            mascotAnimator.cancel();
-            mascotImageView.setTranslationY(0f);
-        }
-    }
-
-    private void selectFile() {
+    private void openFilePicker() {
         Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-        intent.setType("*/*");
         intent.addCategory(Intent.CATEGORY_OPENABLE);
 
-        try {
-            startActivityForResult(Intent.createChooser(intent, "Select Minecraft File"),
-                    Constants.REQUEST_CODE_PICK_FILE);
-        } catch (Exception e) {
-            Toast.makeText(this, "Error opening file picker", Toast.LENGTH_SHORT).show();
-        }
+        String[] mimeTypes = {
+                "application/x-minecraft-pack",   // .mcpack
+                "application/x-minecraft-world",  // .mcworld
+                "application/zip",                // Fallback
+                "application/x-zip-compressed",   // Fallback
+                "application/octet-stream"        // Generic binary
+        };
+
+        intent.setType("*/*");
+        intent.putExtra(Intent.EXTRA_MIME_TYPES, mimeTypes);
+        intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, false);
+        intent.putExtra(Intent.EXTRA_LOCAL_ONLY, true);
+        intent.putExtra(Intent.EXTRA_TITLE, "Select Minecraft File");
+
+        openDocumentLauncher.launch(intent);
     }
 
-    private void handleIncomingIntent(Intent intent) {
-        if (intent != null && Intent.ACTION_VIEW.equals(intent.getAction())) {
-            Uri fileUri = intent.getData();
-            if (fileUri != null) {
-                String fileName = getFileName(fileUri);
-                if (FileUtils.isValidMinecraftFile(fileName)) {
-                    processSelectedFile(fileUri, fileName);
-                } else {
-                    showUnsupportedFileDialog();
-                }
-            }
+    private void handleSelectedFile(Uri uri) {
+        String fileName = getFileName(uri);
+        if (fileName == null) {
+            showError("Could not read file name");
+            return;
         }
-    }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        if (requestCode == Constants.REQUEST_CODE_PICK_FILE && resultCode == RESULT_OK) {
-            if (data != null && data.getData() != null) {
-                Uri fileUri = data.getData();
-                String fileName = getFileName(fileUri);
-
-                if (FileUtils.isValidMinecraftFile(fileName)) {
-                    processSelectedFile(fileUri, fileName);
-                } else {
-                    showUnsupportedFileDialog();
-                }
-            }
-        } else if (requestCode == Constants.REQUEST_CODE_SAF_PERMISSION) {
-            if (permissionHelper.handleSAFPermissionResult(requestCode, resultCode, data)) {
-                Toast.makeText(this, "Permission granted!", Toast.LENGTH_SHORT).show();
-            } else {
-                Toast.makeText(this, "Permission required to install files", Toast.LENGTH_LONG).show();
-            }
+        String lowerFileName = fileName.toLowerCase();
+        if (lowerFileName.endsWith(".mcworld")) {
+            extractAndInstallWorld(uri);
+        } else if (lowerFileName.endsWith(".mcpack")) {
+            extractAndInstallResourcePack(uri);
+        } else {
+            showError("Please select a .mcworld or .mcpack file");
         }
     }
 
     private String getFileName(Uri uri) {
-        String fileName = null;
+        DocumentFile documentFile = DocumentFile.fromSingleUri(this, uri);
+        return documentFile != null ? documentFile.getName() : null;
+    }
 
-        if ("content".equals(uri.getScheme())) {
-            try (Cursor cursor = getContentResolver().query(uri, null, null, null, null)) {
-                if (cursor != null && cursor.moveToFirst()) {
-                    int nameIndex = cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME);
-                    if (nameIndex >= 0) {
-                        fileName = cursor.getString(nameIndex);
+    private void extractAndInstallWorld(Uri uri) {
+        if (minecraftDirectoryUri == null) {
+            requestMinecraftDirectoryAccess();
+            return;
+        }
+
+        try {
+            showProgress("Installing world...");
+            DocumentFile minecraftDir = DocumentFile.fromTreeUri(this, minecraftDirectoryUri);
+            DocumentFile worldsDir = minecraftDir.findFile(MINECRAFT_WORLDS_PATH);
+
+            if (worldsDir == null) {
+                worldsDir = minecraftDir.createDirectory(MINECRAFT_WORLDS_PATH);
+            }
+
+            String worldName = getFileName(uri).replace(".mcworld", "");
+            DocumentFile worldDir = worldsDir.createDirectory(worldName);
+
+            extractZipFile(uri, worldDir);
+            updateStatus("World installed successfully!");
+        } catch (IOException e) {
+            showError("Error installing world: " + e.getMessage());
+        } finally {
+            hideProgress();
+        }
+    }
+
+    private void extractAndInstallResourcePack(Uri uri) {
+        if (minecraftDirectoryUri == null) {
+            requestMinecraftDirectoryAccess();
+            return;
+        }
+
+        try {
+            showProgress("Installing resource pack...");
+            DocumentFile minecraftDir = DocumentFile.fromTreeUri(this, minecraftDirectoryUri);
+            DocumentFile resourcePacksDir = minecraftDir.findFile(MINECRAFT_RESOURCE_PACKS_PATH);
+
+            if (resourcePacksDir == null) {
+                resourcePacksDir = minecraftDir.createDirectory(MINECRAFT_RESOURCE_PACKS_PATH);
+            }
+
+            String packName = getFileName(uri).replace(".mcpack", "");
+            DocumentFile packDir = resourcePacksDir.createDirectory(packName);
+
+            extractZipFile(uri, packDir);
+            updateStatus("Resource pack installed successfully!");
+        } catch (IOException e) {
+            showError("Error installing resource pack: " + e.getMessage());
+        } finally {
+            hideProgress();
+        }
+    }
+
+    private void extractZipFile(Uri zipUri, DocumentFile destinationDir) throws IOException {
+        try (InputStream inputStream = getContentResolver().openInputStream(zipUri);
+             ZipArchiveInputStream zipStream = new ZipArchiveInputStream(inputStream)) {
+
+            ZipArchiveEntry entry;
+            while ((entry = zipStream.getNextZipEntry()) != null) {
+                if (!entry.isDirectory()) {
+                    DocumentFile file = destinationDir.createFile(
+                            "application/octet-stream",
+                            entry.getName()
+                    );
+
+                    if (file != null) {
+                        try (OutputStream outputStream = getContentResolver().openOutputStream(file.getUri())) {
+                            byte[] buffer = new byte[8192];
+                            int len;
+                            while ((len = zipStream.read(buffer)) > 0) {
+                                outputStream.write(buffer, 0, len);
+                            }
+                        }
                     }
                 }
             }
         }
-
-        if (fileName == null) {
-            fileName = uri.getLastPathSegment();
-        }
-
-        return fileName != null ? fileName : "unknown_file";
     }
 
-    private void processSelectedFile(Uri fileUri, String fileName) {
-        if (!permissionHelper.hasSAFPermission()) {
-            // Show explanation and request permission
-            new AlertDialog.Builder(this)
-                    .setTitle("Permission Needed")
-                    .setMessage("This app needs access to your device storage to install Minecraft content. Please select your device's main storage when prompted.")
-                    .setPositiveButton("Grant Permission", (dialog, which) -> {
-                        permissionHelper.requestSAFPermission(this);
-                    })
-                    .setNegativeButton("Cancel", null)
-                    .show();
-            return;
-        }
+    private void requestMinecraftDirectoryAccess() {
+        Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT_TREE);
 
-        // Start installation
-        startInstallation(fileUri, fileName);
+        Uri initialUri = DocumentsContract.buildRootUri(
+                "com.android.externalstorage.documents",
+                "primary:Android/data"
+        );
+
+        intent.putExtra(DocumentsContract.EXTRA_INITIAL_URI, initialUri);
+        intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION | Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
+
+        openDirectoryLauncher.launch(intent);
     }
 
-    private void startInstallation(Uri fileUri, String fileName) {
-        isInstalling = true;
-        stopMascotAnimation();
-
-        // Update UI
-        installButton.setVisibility(View.GONE);
-        statusTextView.setText("Installing " + fileName + "...");
-
-        // Start installation service
-        InstallerService.startInstall(this, fileUri, fileName);
+    private void showProgress(String message) {
+        runOnUiThread(() -> {
+            progressBar.setVisibility(View.VISIBLE);
+            statusText.setText(message);
+            installButton.setEnabled(false);
+        });
     }
 
-    private void onInstallSuccess(String fileName, String fileType) {
-        isInstalling = false;
-
-        // Show success animation
-        showSuccessAnimation();
-
-        // Update status
-        String message = fileName + " installed successfully!";
-        statusTextView.setText(message);
-
-        // Show install button again after delay
-        statusTextView.postDelayed(() -> {
-            installButton.setVisibility(View.VISIBLE);
-            statusTextView.setText("Ready to install more content!");
-            startMascotAnimation();
-        }, 3000);
-
-        Toast.makeText(this, "Installation complete!", Toast.LENGTH_LONG).show();
+    private void hideProgress() {
+        runOnUiThread(() -> {
+            progressBar.setVisibility(View.GONE);
+            installButton.setEnabled(true);
+        });
     }
 
-    private void onInstallError(String error) {
-        isInstalling = false;
-
-        statusTextView.setText("Installation failed: " + error);
-        installButton.setVisibility(View.GONE);
-        retryButton.setVisibility(View.VISIBLE);
-
-        stopMascotAnimation();
-
-        Toast.makeText(this, "Installation failed. Tap retry to try again.", Toast.LENGTH_LONG).show();
+    private void updateStatus(String message) {
+        runOnUiThread(() -> {
+            statusText.setText(message);
+            Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+        });
     }
 
-    private void showSuccessAnimation() {
-        // Simple success animation - scale up and down
-        ObjectAnimator scaleX = ObjectAnimator.ofFloat(mascotImageView, "scaleX", 1f, 1.5f, 1f);
-        ObjectAnimator scaleY = ObjectAnimator.ofFloat(mascotImageView, "scaleY", 1f, 1.5f, 1f);
-
-        scaleX.setDuration(Constants.ANIMATION_DURATION_LONG);
-        scaleY.setDuration(Constants.ANIMATION_DURATION_LONG);
-
-        scaleX.start();
-        scaleY.start();
-    }
-
-    private void showUnsupportedFileDialog() {
-        new AlertDialog.Builder(this)
-                .setTitle("Unsupported File")
-                .setMessage("This app only supports .mcworld and .mcpack files. Please select a valid Minecraft content file.")
-                .setPositiveButton("OK", null)
-                .show();
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        LocalBroadcastManager.getInstance(this).registerReceiver(installReceiver,
-                new IntentFilter(Constants.ACTION_INSTALL_COMPLETE));
-        LocalBroadcastManager.getInstance(this).registerReceiver(installReceiver,
-                new IntentFilter(Constants.ACTION_INSTALL_ERROR));
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        LocalBroadcastManager.getInstance(this).unregisterReceiver(installReceiver);
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        if (mascotAnimator != null) {
-            mascotAnimator.cancel();
-        }
+    private void showError(String message) {
+        runOnUiThread(() -> {
+            statusText.setText(message);
+            Toast.makeText(this, message, Toast.LENGTH_LONG).show();
+        });
     }
 }

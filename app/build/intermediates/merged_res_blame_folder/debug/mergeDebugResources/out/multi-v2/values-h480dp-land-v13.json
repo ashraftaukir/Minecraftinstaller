@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.acimis.minecraftinstaller.app-mergeDebugResources-29:/values-h480dp-land-v13/values-h480dp-land-v13.xml",
+            "outputFile": "com.minecraftcompanion.app-mergeDebugResources-29:/values-h480dp-land-v13/values-h480dp-land-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\taukir\\.gradle\\caches\\8.10.2\\transforms\\8dcc51b7ee50b04c8128778f064681c0\\transformed\\material-1.12.0\\res\\values-h480dp-land-v13\\values-h480dp-land-v13.xml",
+                    "source": "C:\\Users\\taukir\\.gradle\\caches\\8.10.2\\transforms\\76c76afa962f6a3a1a3863a5f8f7bd44\\transformed\\material-1.11.0\\res\\values-h480dp-land-v13\\values-h480dp-land-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10",
                         "startColumns": "4,4,4,4,4,4,4,4,4",

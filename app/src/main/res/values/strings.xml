@@ -1,6 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">MineCraft Installer</string>
-    <string name="install_button_text">Install Minecraft Content</string>
+    <string name="app_name">Minecraft Companion</string>
+    <string name="app_title">Minecraft Companion</string>
+    <string name="app_subtitle">Install worlds and resource packs easily!</string>
+    <string name="install_button_text">Choose Minecraft File</string>
+    <string name="minecraft_logo_description">Minecraft Logo</string>
+    <string name="installing_world">Installing your awesome world…</string>
+    <string name="installing_resource_pack">Installing your cool resource pack…</string>
+    <string name="world_installed">Yay! Your world is ready to play!</string>
+    <string name="resource_pack_installed">Awesome! Your resource pack is ready!</string>
+    <string name="error_installing">Oops! Something went wrong. Try again!</string>
+    <string name="error_file_type">Please choose a .mcworld or .mcpack file!</string>
+    <string name="error_file_name">Could not read the file name. Try another file!</string>
+    <string name="error_directory_access">We need permission to access Minecraft files!</string>
+    <string name="directory_access_granted">Great! Now we can install your files!</string>
+    <string name="error_unsupported_format">Unsupported file format</string>
+    <string name="success_world_installed">World installed successfully!</string>
+    <string name="success_resource_pack_installed">Resource pack installed successfully!</string>
     <string name="retry_button_text">Try Again</string>
     <string name="status_ready">Ready to install Minecraft content!</string>
     <string name="status_installing">Installing %1$s...</string>

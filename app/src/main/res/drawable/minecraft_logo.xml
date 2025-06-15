@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="200dp"
+    android:viewportWidth="200"
+    android:viewportHeight="200">
+
+    <!-- Minecraft Logo Background -->
+    <path
+        android:fillColor="#4CAF50"
+        android:pathData="M20,20 L180,20 L180,180 L20,180 Z" />
+
+    <!-- Minecraft Logo Text -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M40,60 L60,60 L60,80 L40,80 Z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M70,60 L90,60 L90,80 L70,80 Z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M100,60 L120,60 L120,80 L100,80 Z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M130,60 L150,60 L150,80 L130,80 Z" />
+
+    <!-- Minecraft Block -->
+    <path
+        android:fillColor="#795548"
+        android:pathData="M80,100 L120,100 L120,140 L80,140 Z" />
+    <path
+        android:fillColor="#5D4037"
+        android:pathData="M80,100 L120,100 L120,120 L80,120 Z" />
+    <path
+        android:fillColor="#8D6E63"
+        android:pathData="M80,120 L120,120 L120,140 L80,140 Z" />
+
+</vector> 

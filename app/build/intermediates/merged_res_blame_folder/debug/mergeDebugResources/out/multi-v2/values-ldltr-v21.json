@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.acimis.minecraftinstaller.app-mergeDebugResources-29:/values-ldltr-v21/values-ldltr-v21.xml",
+            "outputFile": "com.minecraftcompanion.app-mergeDebugResources-29:/values-ldltr-v21/values-ldltr-v21.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\taukir\\.gradle\\caches\\8.10.2\\transforms\\60d7126554519a6955fc705e0469ae7f\\transformed\\appcompat-1.7.0\\res\\values-ldltr-v21\\values-ldltr-v21.xml",
+                    "source": "C:\\Users\\taukir\\.gradle\\caches\\8.10.2\\transforms\\cb421e33544cf4936d5ffcb0395b39bf\\transformed\\appcompat-1.6.1\\res\\values-ldltr-v21\\values-ldltr-v21.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

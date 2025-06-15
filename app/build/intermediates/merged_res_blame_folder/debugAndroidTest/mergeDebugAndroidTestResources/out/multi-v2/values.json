@@ -1,17 +1,17 @@
 {
     "logs": [
         {
-            "outputFile": "com.acimis.minecraftinstaller.test.app-mergeDebugAndroidTestResources-2:/values/values.xml",
+            "outputFile": "com.minecraftcompanion.test.app-mergeDebugAndroidTestResources-3:/values/values.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\taukir\\.gradle\\caches\\8.10.2\\transforms\\08904cf67f3e7b9b4f80ef08a521e068\\transformed\\core-1.6.1\\res\\values\\values.xml",
+                    "source": "C:\\Users\\taukir\\.gradle\\caches\\8.10.2\\transforms\\fa03b2955bf843514bab2f6bfc5026e3\\transformed\\core-1.5.0\\res\\values\\values.xml",
                     "from": {
                         "startLines": "4,11",
                         "startColumns": "0,0",
-                        "startOffsets": "142,510",
+                        "startOffsets": "176,544",
                         "endLines": "10,17",
                         "endColumns": "8,8",
-                        "endOffsets": "509,875"
+                        "endOffsets": "543,909"
                     },
                     "to": {
                         "startLines": "2,9",
