@@ -130,6 +130,7 @@ drawable minecraft_logo
 id installButton
 id minecraftLogo
 id progressBar
+id setupButton
 id statusText
 id subtitleText
 id titleText

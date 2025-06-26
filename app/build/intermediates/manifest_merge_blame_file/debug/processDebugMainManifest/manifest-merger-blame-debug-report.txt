@@ -1,6 +1,6 @@
 1<?xml version="1.0" encoding="utf-8"?>
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-3    package="com.minecraftcompanion"
+3    package="com.acimis.minecraftinstaller"
 4    android:versionCode="1"
 5    android:versionName="1.0" >
 6
@@ -9,263 +9,275 @@
 9        android:targetSdkVersion="34" />
 10
 11    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-11-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:5:5-80
-11-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:5:22-77
+11-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:4:5-80
+11-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:4:22-77
 12    <uses-permission
-12-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:6:5-7:38
+12-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:5:5-6:38
 13        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
-13-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:6:22-78
+13-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:5:22-78
 14        android:maxSdkVersion="28" />
-14-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:7:9-35
-15
-16    <permission
-16-->[androidx.core:core:1.9.0] C:\Users\taukir\.gradle\caches\8.10.2\transforms\ceba2990ef03bee931e8ae6af167fc2c\transformed\core-1.9.0\AndroidManifest.xml:22:5-24:47
-17        android:name="com.minecraftcompanion.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-17-->[androidx.core:core:1.9.0] C:\Users\taukir\.gradle\caches\8.10.2\transforms\ceba2990ef03bee931e8ae6af167fc2c\transformed\core-1.9.0\AndroidManifest.xml:23:9-81
-18        android:protectionLevel="signature" />
-18-->[androidx.core:core:1.9.0] C:\Users\taukir\.gradle\caches\8.10.2\transforms\ceba2990ef03bee931e8ae6af167fc2c\transformed\core-1.9.0\AndroidManifest.xml:24:9-44
-19
-20    <uses-permission android:name="com.minecraftcompanion.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-20-->[androidx.core:core:1.9.0] C:\Users\taukir\.gradle\caches\8.10.2\transforms\ceba2990ef03bee931e8ae6af167fc2c\transformed\core-1.9.0\AndroidManifest.xml:26:5-97
-20-->[androidx.core:core:1.9.0] C:\Users\taukir\.gradle\caches\8.10.2\transforms\ceba2990ef03bee931e8ae6af167fc2c\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
-21
-22    <application
-22-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:9:5-88:19
-23        android:allowBackup="true"
-23-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:10:9-35
-24        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-24-->[androidx.core:core:1.9.0] C:\Users\taukir\.gradle\caches\8.10.2\transforms\ceba2990ef03bee931e8ae6af167fc2c\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
-25        android:debuggable="true"
-26        android:extractNativeLibs="false"
-27        android:icon="@mipmap/ic_launcher"
-27-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:11:9-43
-28        android:label="@string/app_name"
-28-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:12:9-41
-29        android:roundIcon="@mipmap/ic_launcher_round"
-29-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:13:9-54
-30        android:supportsRtl="true"
-30-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:14:9-35
-31        android:theme="@style/Theme.MinecraftCompanion" >
-31-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:15:9-56
-32        <activity
-32-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:17:9-83:20
-33            android:name="com.acimis.minecraftinstaller.MainActivity"
-33-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:18:13-70
-34            android:exported="true"
-34-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:19:13-36
-35            android:label="@string/app_name"
-35-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:21:13-45
-36            android:launchMode="singleTop"
-36-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:20:13-43
-37            android:theme="@style/Theme.MinecraftCompanion" >
-37-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:22:13-60
-38            <intent-filter>
-38-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:23:13-26:29
-39                <action android:name="android.intent.action.MAIN" />
-39-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:24:17-69
-39-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:24:25-66
-40
-41                <category android:name="android.intent.category.LAUNCHER" />
-41-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:25:17-77
-41-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:25:27-74
-42            </intent-filter>
-43
-44            <!-- Handle .mcworld files - file scheme -->
-45            <intent-filter>
-45-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:29:13-38:29
-46                <action android:name="android.intent.action.VIEW" />
-46-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:30:17-69
-46-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:30:25-66
-47
-48                <category android:name="android.intent.category.DEFAULT" />
-48-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:31:17-76
-48-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:31:27-73
-49                <category android:name="android.intent.category.BROWSABLE" />
-49-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:32:17-78
-49-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:32:27-75
-50
-51                <data
-51-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:33:17-37:46
-52                    android:host="*"
-52-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:34:21-37
-53                    android:mimeType="*/*"
-53-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:37:21-43
-54                    android:pathPattern=".*\\.mcworld"
-54-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:36:21-55
-55                    android:scheme="file" />
-55-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:35:21-42
-56            </intent-filter>
-57
-58            <!-- Handle .mcworld files - content scheme -->
-59            <intent-filter>
-59-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:41:13-50:29
-60                <action android:name="android.intent.action.VIEW" />
-60-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:30:17-69
-60-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:30:25-66
-61
-62                <category android:name="android.intent.category.DEFAULT" />
-62-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:31:17-76
-62-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:31:27-73
-63                <category android:name="android.intent.category.BROWSABLE" />
-63-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:32:17-78
-63-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:32:27-75
-64
-65                <data
-65-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:33:17-37:46
-66                    android:host="*"
-66-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:34:21-37
-67                    android:mimeType="*/*"
-67-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:37:21-43
-68                    android:pathPattern=".*\\.mcworld"
-68-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:36:21-55
-69                    android:scheme="content" />
-69-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:35:21-42
-70            </intent-filter>
-71
-72            <!-- Handle .mcpack files - file scheme -->
-73            <intent-filter>
-73-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:53:13-62:29
-74                <action android:name="android.intent.action.VIEW" />
-74-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:30:17-69
-74-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:30:25-66
-75
-76                <category android:name="android.intent.category.DEFAULT" />
-76-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:31:17-76
-76-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:31:27-73
-77                <category android:name="android.intent.category.BROWSABLE" />
-77-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:32:17-78
-77-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:32:27-75
-78
-79                <data
-79-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:33:17-37:46
-80                    android:host="*"
-80-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:34:21-37
-81                    android:mimeType="*/*"
-81-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:37:21-43
-82                    android:pathPattern=".*\\.mcpack"
-82-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:36:21-55
-83                    android:scheme="file" />
-83-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:35:21-42
-84            </intent-filter>
-85
-86            <!-- Handle .mcpack files - content scheme -->
-87            <intent-filter>
-87-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:65:13-74:29
-88                <action android:name="android.intent.action.VIEW" />
-88-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:30:17-69
-88-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:30:25-66
-89
-90                <category android:name="android.intent.category.DEFAULT" />
-90-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:31:17-76
-90-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:31:27-73
-91                <category android:name="android.intent.category.BROWSABLE" />
-91-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:32:17-78
-91-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:32:27-75
-92
-93                <data
-93-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:33:17-37:46
-94                    android:host="*"
-94-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:34:21-37
-95                    android:mimeType="*/*"
-95-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:37:21-43
-96                    android:pathPattern=".*\\.mcpack"
-96-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:36:21-55
-97                    android:scheme="content" />
-97-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:35:21-42
-98            </intent-filter>
-99
-100            <!-- Handle files by MIME type as backup -->
-101            <intent-filter>
-101-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:77:13-82:29
-102                <action android:name="android.intent.action.VIEW" />
-102-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:30:17-69
-102-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:30:25-66
-103
-104                <category android:name="android.intent.category.DEFAULT" />
-104-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:31:17-76
-104-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:31:27-73
+14-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:6:9-35
+15    <uses-permission
+15-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:7:5-8:38
+16        android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
+16-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:7:22-79
+17        android:maxSdkVersion="32" />
+17-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:8:9-35
+18
+19    <permission
+19-->[androidx.core:core:1.9.0] C:\Users\taukir\.gradle\caches\8.10.2\transforms\ceba2990ef03bee931e8ae6af167fc2c\transformed\core-1.9.0\AndroidManifest.xml:22:5-24:47
+20        android:name="com.acimis.minecraftinstaller.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+20-->[androidx.core:core:1.9.0] C:\Users\taukir\.gradle\caches\8.10.2\transforms\ceba2990ef03bee931e8ae6af167fc2c\transformed\core-1.9.0\AndroidManifest.xml:23:9-81
+21        android:protectionLevel="signature" />
+21-->[androidx.core:core:1.9.0] C:\Users\taukir\.gradle\caches\8.10.2\transforms\ceba2990ef03bee931e8ae6af167fc2c\transformed\core-1.9.0\AndroidManifest.xml:24:9-44
+22
+23    <uses-permission android:name="com.acimis.minecraftinstaller.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+23-->[androidx.core:core:1.9.0] C:\Users\taukir\.gradle\caches\8.10.2\transforms\ceba2990ef03bee931e8ae6af167fc2c\transformed\core-1.9.0\AndroidManifest.xml:26:5-97
+23-->[androidx.core:core:1.9.0] C:\Users\taukir\.gradle\caches\8.10.2\transforms\ceba2990ef03bee931e8ae6af167fc2c\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
+24
+25    <application
+25-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:10:5-92:19
+26        android:allowBackup="true"
+26-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:11:9-35
+27        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+27-->[androidx.core:core:1.9.0] C:\Users\taukir\.gradle\caches\8.10.2\transforms\ceba2990ef03bee931e8ae6af167fc2c\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
+28        android:debuggable="true"
+29        android:extractNativeLibs="false"
+30        android:icon="@mipmap/ic_launcher"
+30-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:12:9-43
+31        android:label="@string/app_name"
+31-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:13:9-41
+32        android:requestLegacyExternalStorage="true"
+32-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:17:9-52
+33        android:roundIcon="@mipmap/ic_launcher_round"
+33-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:14:9-54
+34        android:supportsRtl="true"
+34-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:15:9-35
+35        android:theme="@style/Theme.MinecraftCompanion" >
+35-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:16:9-56
+36        <activity
+36-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:19:9-87:20
+37            android:name="com.acimis.minecraftinstaller.MainActivity"
+37-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:20:13-70
+38            android:configChanges="orientation|keyboardHidden|screenSize"
+38-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:26:13-74
+39            android:exported="true"
+39-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:21:13-36
+40            android:label="@string/app_name"
+40-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:23:13-45
+41            android:launchMode="singleTop"
+41-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:22:13-43
+42            android:screenOrientation="portrait"
+42-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:25:13-49
+43            android:theme="@style/Theme.MinecraftCompanion" >
+43-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:24:13-60
+44            <intent-filter>
+44-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:27:13-30:29
+45                <action android:name="android.intent.action.MAIN" />
+45-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:28:17-69
+45-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:28:25-66
+46
+47                <category android:name="android.intent.category.LAUNCHER" />
+47-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:29:17-77
+47-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:29:27-74
+48            </intent-filter>
+49
+50            <!-- Handle .mcworld files - file scheme -->
+51            <intent-filter>
+51-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:33:13-42:29
+52                <action android:name="android.intent.action.VIEW" />
+52-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:34:17-69
+52-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:34:25-66
+53
+54                <category android:name="android.intent.category.DEFAULT" />
+54-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:35:17-76
+54-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:35:27-73
+55                <category android:name="android.intent.category.BROWSABLE" />
+55-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:36:17-78
+55-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:36:27-75
+56
+57                <data
+57-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:37:17-41:46
+58                    android:host="*"
+58-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:38:21-37
+59                    android:mimeType="*/*"
+59-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:41:21-43
+60                    android:pathPattern=".*\\.mcworld"
+60-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:40:21-55
+61                    android:scheme="file" />
+61-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:39:21-42
+62            </intent-filter>
+63
+64            <!-- Handle .mcworld files - content scheme -->
+65            <intent-filter>
+65-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:45:13-54:29
+66                <action android:name="android.intent.action.VIEW" />
+66-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:34:17-69
+66-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:34:25-66
+67
+68                <category android:name="android.intent.category.DEFAULT" />
+68-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:35:17-76
+68-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:35:27-73
+69                <category android:name="android.intent.category.BROWSABLE" />
+69-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:36:17-78
+69-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:36:27-75
+70
+71                <data
+71-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:37:17-41:46
+72                    android:host="*"
+72-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:38:21-37
+73                    android:mimeType="*/*"
+73-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:41:21-43
+74                    android:pathPattern=".*\\.mcworld"
+74-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:40:21-55
+75                    android:scheme="content" />
+75-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:39:21-42
+76            </intent-filter>
+77
+78            <!-- Handle .mcpack files - file scheme -->
+79            <intent-filter>
+79-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:57:13-66:29
+80                <action android:name="android.intent.action.VIEW" />
+80-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:34:17-69
+80-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:34:25-66
+81
+82                <category android:name="android.intent.category.DEFAULT" />
+82-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:35:17-76
+82-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:35:27-73
+83                <category android:name="android.intent.category.BROWSABLE" />
+83-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:36:17-78
+83-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:36:27-75
+84
+85                <data
+85-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:37:17-41:46
+86                    android:host="*"
+86-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:38:21-37
+87                    android:mimeType="*/*"
+87-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:41:21-43
+88                    android:pathPattern=".*\\.mcpack"
+88-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:40:21-55
+89                    android:scheme="file" />
+89-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:39:21-42
+90            </intent-filter>
+91
+92            <!-- Handle .mcpack files - content scheme -->
+93            <intent-filter>
+93-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:69:13-78:29
+94                <action android:name="android.intent.action.VIEW" />
+94-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:34:17-69
+94-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:34:25-66
+95
+96                <category android:name="android.intent.category.DEFAULT" />
+96-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:35:17-76
+96-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:35:27-73
+97                <category android:name="android.intent.category.BROWSABLE" />
+97-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:36:17-78
+97-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:36:27-75
+98
+99                <data
+99-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:37:17-41:46
+100                    android:host="*"
+100-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:38:21-37
+101                    android:mimeType="*/*"
+101-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:41:21-43
+102                    android:pathPattern=".*\\.mcpack"
+102-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:40:21-55
+103                    android:scheme="content" />
+103-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:39:21-42
+104            </intent-filter>
 105
-106                <data android:mimeType="application/zip" />
-106-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:33:17-37:46
-106-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:37:21-43
-107                <data android:mimeType="application/x-zip-compressed" />
-107-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:33:17-37:46
-107-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:37:21-43
-108            </intent-filter>
-109        </activity>
-110
-111        <service
-111-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:85:9-87:40
-112            android:name="com.acimis.minecraftinstaller.InstallerService"
-112-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:86:13-74
-113            android:exported="false" />
-113-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:87:13-37
-114
-115        <provider
-115-->[androidx.emoji2:emoji2:1.2.0] C:\Users\taukir\.gradle\caches\8.10.2\transforms\627adee97cf177259695075caca11f5c\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
-116            android:name="androidx.startup.InitializationProvider"
-116-->[androidx.emoji2:emoji2:1.2.0] C:\Users\taukir\.gradle\caches\8.10.2\transforms\627adee97cf177259695075caca11f5c\transformed\emoji2-1.2.0\AndroidManifest.xml:25:13-67
-117            android:authorities="com.minecraftcompanion.androidx-startup"
-117-->[androidx.emoji2:emoji2:1.2.0] C:\Users\taukir\.gradle\caches\8.10.2\transforms\627adee97cf177259695075caca11f5c\transformed\emoji2-1.2.0\AndroidManifest.xml:26:13-68
-118            android:exported="false" >
-118-->[androidx.emoji2:emoji2:1.2.0] C:\Users\taukir\.gradle\caches\8.10.2\transforms\627adee97cf177259695075caca11f5c\transformed\emoji2-1.2.0\AndroidManifest.xml:27:13-37
-119            <meta-data
-119-->[androidx.emoji2:emoji2:1.2.0] C:\Users\taukir\.gradle\caches\8.10.2\transforms\627adee97cf177259695075caca11f5c\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
-120                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-120-->[androidx.emoji2:emoji2:1.2.0] C:\Users\taukir\.gradle\caches\8.10.2\transforms\627adee97cf177259695075caca11f5c\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
-121                android:value="androidx.startup" />
-121-->[androidx.emoji2:emoji2:1.2.0] C:\Users\taukir\.gradle\caches\8.10.2\transforms\627adee97cf177259695075caca11f5c\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
-122            <meta-data
-122-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\taukir\.gradle\caches\8.10.2\transforms\cb61653ae16b943f2d98cf1a7458e1b8\transformed\lifecycle-process-2.6.1\AndroidManifest.xml:29:13-31:52
-123                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-123-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\taukir\.gradle\caches\8.10.2\transforms\cb61653ae16b943f2d98cf1a7458e1b8\transformed\lifecycle-process-2.6.1\AndroidManifest.xml:30:17-78
-124                android:value="androidx.startup" />
-124-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\taukir\.gradle\caches\8.10.2\transforms\cb61653ae16b943f2d98cf1a7458e1b8\transformed\lifecycle-process-2.6.1\AndroidManifest.xml:31:17-49
+106            <!-- Handle files by MIME type as backup -->
+107            <intent-filter>
+107-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:81:13-86:29
+108                <action android:name="android.intent.action.VIEW" />
+108-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:34:17-69
+108-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:34:25-66
+109
+110                <category android:name="android.intent.category.DEFAULT" />
+110-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:35:17-76
+110-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:35:27-73
+111
+112                <data android:mimeType="application/zip" />
+112-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:37:17-41:46
+112-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:41:21-43
+113                <data android:mimeType="application/x-zip-compressed" />
+113-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:37:17-41:46
+113-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:41:21-43
+114            </intent-filter>
+115        </activity>
+116
+117        <service
+117-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:89:9-91:40
+118            android:name="com.acimis.minecraftinstaller.InstallerService"
+118-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:90:13-74
+119            android:exported="false" />
+119-->D:\MineCraftInstaller\app\src\main\AndroidManifest.xml:91:13-37
+120
+121        <provider
+121-->[androidx.emoji2:emoji2:1.2.0] C:\Users\taukir\.gradle\caches\8.10.2\transforms\627adee97cf177259695075caca11f5c\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+122            android:name="androidx.startup.InitializationProvider"
+122-->[androidx.emoji2:emoji2:1.2.0] C:\Users\taukir\.gradle\caches\8.10.2\transforms\627adee97cf177259695075caca11f5c\transformed\emoji2-1.2.0\AndroidManifest.xml:25:13-67
+123            android:authorities="com.acimis.minecraftinstaller.androidx-startup"
+123-->[androidx.emoji2:emoji2:1.2.0] C:\Users\taukir\.gradle\caches\8.10.2\transforms\627adee97cf177259695075caca11f5c\transformed\emoji2-1.2.0\AndroidManifest.xml:26:13-68
+124            android:exported="false" >
+124-->[androidx.emoji2:emoji2:1.2.0] C:\Users\taukir\.gradle\caches\8.10.2\transforms\627adee97cf177259695075caca11f5c\transformed\emoji2-1.2.0\AndroidManifest.xml:27:13-37
 125            <meta-data
-125-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\taukir\.gradle\caches\8.10.2\transforms\3aa01856cc30f191e74f5d8a26914c6e\transformed\profileinstaller-1.3.0\AndroidManifest.xml:29:13-31:52
-126                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-126-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\taukir\.gradle\caches\8.10.2\transforms\3aa01856cc30f191e74f5d8a26914c6e\transformed\profileinstaller-1.3.0\AndroidManifest.xml:30:17-85
+125-->[androidx.emoji2:emoji2:1.2.0] C:\Users\taukir\.gradle\caches\8.10.2\transforms\627adee97cf177259695075caca11f5c\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+126                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+126-->[androidx.emoji2:emoji2:1.2.0] C:\Users\taukir\.gradle\caches\8.10.2\transforms\627adee97cf177259695075caca11f5c\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
 127                android:value="androidx.startup" />
-127-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\taukir\.gradle\caches\8.10.2\transforms\3aa01856cc30f191e74f5d8a26914c6e\transformed\profileinstaller-1.3.0\AndroidManifest.xml:31:17-49
-128        </provider>
-129
-130        <receiver
-130-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\taukir\.gradle\caches\8.10.2\transforms\3aa01856cc30f191e74f5d8a26914c6e\transformed\profileinstaller-1.3.0\AndroidManifest.xml:34:9-52:20
-131            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-131-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\taukir\.gradle\caches\8.10.2\transforms\3aa01856cc30f191e74f5d8a26914c6e\transformed\profileinstaller-1.3.0\AndroidManifest.xml:35:13-76
-132            android:directBootAware="false"
-132-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\taukir\.gradle\caches\8.10.2\transforms\3aa01856cc30f191e74f5d8a26914c6e\transformed\profileinstaller-1.3.0\AndroidManifest.xml:36:13-44
-133            android:enabled="true"
-133-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\taukir\.gradle\caches\8.10.2\transforms\3aa01856cc30f191e74f5d8a26914c6e\transformed\profileinstaller-1.3.0\AndroidManifest.xml:37:13-35
-134            android:exported="true"
-134-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\taukir\.gradle\caches\8.10.2\transforms\3aa01856cc30f191e74f5d8a26914c6e\transformed\profileinstaller-1.3.0\AndroidManifest.xml:38:13-36
-135            android:permission="android.permission.DUMP" >
-135-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\taukir\.gradle\caches\8.10.2\transforms\3aa01856cc30f191e74f5d8a26914c6e\transformed\profileinstaller-1.3.0\AndroidManifest.xml:39:13-57
-136            <intent-filter>
-136-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\taukir\.gradle\caches\8.10.2\transforms\3aa01856cc30f191e74f5d8a26914c6e\transformed\profileinstaller-1.3.0\AndroidManifest.xml:40:13-42:29
-137                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-137-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\taukir\.gradle\caches\8.10.2\transforms\3aa01856cc30f191e74f5d8a26914c6e\transformed\profileinstaller-1.3.0\AndroidManifest.xml:41:17-91
-137-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\taukir\.gradle\caches\8.10.2\transforms\3aa01856cc30f191e74f5d8a26914c6e\transformed\profileinstaller-1.3.0\AndroidManifest.xml:41:25-88
-138            </intent-filter>
-139            <intent-filter>
-139-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\taukir\.gradle\caches\8.10.2\transforms\3aa01856cc30f191e74f5d8a26914c6e\transformed\profileinstaller-1.3.0\AndroidManifest.xml:43:13-45:29
-140                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-140-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\taukir\.gradle\caches\8.10.2\transforms\3aa01856cc30f191e74f5d8a26914c6e\transformed\profileinstaller-1.3.0\AndroidManifest.xml:44:17-85
-140-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\taukir\.gradle\caches\8.10.2\transforms\3aa01856cc30f191e74f5d8a26914c6e\transformed\profileinstaller-1.3.0\AndroidManifest.xml:44:25-82
-141            </intent-filter>
+127-->[androidx.emoji2:emoji2:1.2.0] C:\Users\taukir\.gradle\caches\8.10.2\transforms\627adee97cf177259695075caca11f5c\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
+128            <meta-data
+128-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\taukir\.gradle\caches\8.10.2\transforms\cb61653ae16b943f2d98cf1a7458e1b8\transformed\lifecycle-process-2.6.1\AndroidManifest.xml:29:13-31:52
+129                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+129-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\taukir\.gradle\caches\8.10.2\transforms\cb61653ae16b943f2d98cf1a7458e1b8\transformed\lifecycle-process-2.6.1\AndroidManifest.xml:30:17-78
+130                android:value="androidx.startup" />
+130-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\taukir\.gradle\caches\8.10.2\transforms\cb61653ae16b943f2d98cf1a7458e1b8\transformed\lifecycle-process-2.6.1\AndroidManifest.xml:31:17-49
+131            <meta-data
+131-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\taukir\.gradle\caches\8.10.2\transforms\3aa01856cc30f191e74f5d8a26914c6e\transformed\profileinstaller-1.3.0\AndroidManifest.xml:29:13-31:52
+132                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+132-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\taukir\.gradle\caches\8.10.2\transforms\3aa01856cc30f191e74f5d8a26914c6e\transformed\profileinstaller-1.3.0\AndroidManifest.xml:30:17-85
+133                android:value="androidx.startup" />
+133-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\taukir\.gradle\caches\8.10.2\transforms\3aa01856cc30f191e74f5d8a26914c6e\transformed\profileinstaller-1.3.0\AndroidManifest.xml:31:17-49
+134        </provider>
+135
+136        <receiver
+136-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\taukir\.gradle\caches\8.10.2\transforms\3aa01856cc30f191e74f5d8a26914c6e\transformed\profileinstaller-1.3.0\AndroidManifest.xml:34:9-52:20
+137            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+137-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\taukir\.gradle\caches\8.10.2\transforms\3aa01856cc30f191e74f5d8a26914c6e\transformed\profileinstaller-1.3.0\AndroidManifest.xml:35:13-76
+138            android:directBootAware="false"
+138-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\taukir\.gradle\caches\8.10.2\transforms\3aa01856cc30f191e74f5d8a26914c6e\transformed\profileinstaller-1.3.0\AndroidManifest.xml:36:13-44
+139            android:enabled="true"
+139-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\taukir\.gradle\caches\8.10.2\transforms\3aa01856cc30f191e74f5d8a26914c6e\transformed\profileinstaller-1.3.0\AndroidManifest.xml:37:13-35
+140            android:exported="true"
+140-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\taukir\.gradle\caches\8.10.2\transforms\3aa01856cc30f191e74f5d8a26914c6e\transformed\profileinstaller-1.3.0\AndroidManifest.xml:38:13-36
+141            android:permission="android.permission.DUMP" >
+141-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\taukir\.gradle\caches\8.10.2\transforms\3aa01856cc30f191e74f5d8a26914c6e\transformed\profileinstaller-1.3.0\AndroidManifest.xml:39:13-57
 142            <intent-filter>
-142-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\taukir\.gradle\caches\8.10.2\transforms\3aa01856cc30f191e74f5d8a26914c6e\transformed\profileinstaller-1.3.0\AndroidManifest.xml:46:13-48:29
-143                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
-143-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\taukir\.gradle\caches\8.10.2\transforms\3aa01856cc30f191e74f5d8a26914c6e\transformed\profileinstaller-1.3.0\AndroidManifest.xml:47:17-88
-143-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\taukir\.gradle\caches\8.10.2\transforms\3aa01856cc30f191e74f5d8a26914c6e\transformed\profileinstaller-1.3.0\AndroidManifest.xml:47:25-85
+142-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\taukir\.gradle\caches\8.10.2\transforms\3aa01856cc30f191e74f5d8a26914c6e\transformed\profileinstaller-1.3.0\AndroidManifest.xml:40:13-42:29
+143                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+143-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\taukir\.gradle\caches\8.10.2\transforms\3aa01856cc30f191e74f5d8a26914c6e\transformed\profileinstaller-1.3.0\AndroidManifest.xml:41:17-91
+143-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\taukir\.gradle\caches\8.10.2\transforms\3aa01856cc30f191e74f5d8a26914c6e\transformed\profileinstaller-1.3.0\AndroidManifest.xml:41:25-88
 144            </intent-filter>
 145            <intent-filter>
-145-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\taukir\.gradle\caches\8.10.2\transforms\3aa01856cc30f191e74f5d8a26914c6e\transformed\profileinstaller-1.3.0\AndroidManifest.xml:49:13-51:29
-146                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
-146-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\taukir\.gradle\caches\8.10.2\transforms\3aa01856cc30f191e74f5d8a26914c6e\transformed\profileinstaller-1.3.0\AndroidManifest.xml:50:17-95
-146-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\taukir\.gradle\caches\8.10.2\transforms\3aa01856cc30f191e74f5d8a26914c6e\transformed\profileinstaller-1.3.0\AndroidManifest.xml:50:25-92
+145-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\taukir\.gradle\caches\8.10.2\transforms\3aa01856cc30f191e74f5d8a26914c6e\transformed\profileinstaller-1.3.0\AndroidManifest.xml:43:13-45:29
+146                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+146-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\taukir\.gradle\caches\8.10.2\transforms\3aa01856cc30f191e74f5d8a26914c6e\transformed\profileinstaller-1.3.0\AndroidManifest.xml:44:17-85
+146-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\taukir\.gradle\caches\8.10.2\transforms\3aa01856cc30f191e74f5d8a26914c6e\transformed\profileinstaller-1.3.0\AndroidManifest.xml:44:25-82
 147            </intent-filter>
-148        </receiver>
-149    </application>
-150
-151</manifest>
+148            <intent-filter>
+148-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\taukir\.gradle\caches\8.10.2\transforms\3aa01856cc30f191e74f5d8a26914c6e\transformed\profileinstaller-1.3.0\AndroidManifest.xml:46:13-48:29
+149                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+149-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\taukir\.gradle\caches\8.10.2\transforms\3aa01856cc30f191e74f5d8a26914c6e\transformed\profileinstaller-1.3.0\AndroidManifest.xml:47:17-88
+149-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\taukir\.gradle\caches\8.10.2\transforms\3aa01856cc30f191e74f5d8a26914c6e\transformed\profileinstaller-1.3.0\AndroidManifest.xml:47:25-85
+150            </intent-filter>
+151            <intent-filter>
+151-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\taukir\.gradle\caches\8.10.2\transforms\3aa01856cc30f191e74f5d8a26914c6e\transformed\profileinstaller-1.3.0\AndroidManifest.xml:49:13-51:29
+152                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+152-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\taukir\.gradle\caches\8.10.2\transforms\3aa01856cc30f191e74f5d8a26914c6e\transformed\profileinstaller-1.3.0\AndroidManifest.xml:50:17-95
+152-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\taukir\.gradle\caches\8.10.2\transforms\3aa01856cc30f191e74f5d8a26914c6e\transformed\profileinstaller-1.3.0\AndroidManifest.xml:50:25-92
+153            </intent-filter>
+154        </receiver>
+155    </application>
+156
+157</manifest>

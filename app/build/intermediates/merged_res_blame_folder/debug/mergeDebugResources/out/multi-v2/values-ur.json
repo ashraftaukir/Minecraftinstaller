@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.minecraftcompanion.app-mergeDebugResources-29:/values-ur/values-ur.xml",
+            "outputFile": "com.acimis.minecraftinstaller.app-mergeDebugResources-30:/values-ur/values-ur.xml",
             "map": [
                 {
                     "source": "C:\\Users\\taukir\\.gradle\\caches\\8.10.2\\transforms\\ceba2990ef03bee931e8ae6af167fc2c\\transformed\\core-1.9.0\\res\\values-ur\\values-ur.xml",

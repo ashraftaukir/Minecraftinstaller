@@ -4,7 +4,7 @@
     "type": "LINKED_RESOURCES_BINARY_FORMAT",
     "kind": "Directory"
   },
-  "applicationId": "com.minecraftcompanion.test",
+  "applicationId": "com.acimis.minecraftinstaller.test",
   "variantName": "debugAndroidTest",
   "elements": [
     {

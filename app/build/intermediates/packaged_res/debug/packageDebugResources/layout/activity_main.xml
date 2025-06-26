@@ -61,10 +61,29 @@
         android:textColor="@color/minecraft_white"
         android:textSize="18sp"
         app:cornerRadius="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/progressBar"
+        app:layout_constraintBottom_toTopOf="@+id/setupButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/subtitleText" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/setupButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/minecraft_brown"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:text="Setup Minecraft Folder"
+        android:textColor="@color/minecraft_white"
+        android:textSize="14sp"
+        app:cornerRadius="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/progressBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/installButton" />
 
     <ProgressBar
         android:id="@+id/progressBar"
@@ -76,7 +95,7 @@
         app:layout_constraintBottom_toTopOf="@+id/statusText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/installButton" />
+        app:layout_constraintTop_toBottomOf="@+id/setupButton" />
 
     <TextView
         android:id="@+id/statusText"

@@ -4,7 +4,7 @@
     "type": "APK",
     "kind": "Directory"
   },
-  "applicationId": "com.minecraftcompanion.test",
+  "applicationId": "com.acimis.minecraftinstaller.test",
   "variantName": "debugAndroidTest",
   "elements": [
     {

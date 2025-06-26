@@ -1,6 +1,6 @@
-com.minecraftcompanion.test.app-annotation-experimental-1.3.0-0 C:\Users\taukir\.gradle\caches\8.10.2\transforms\a8df742a88043c2c4001c193e3c63aa4\transformed\annotation-experimental-1.3.0\res
-com.minecraftcompanion.test.app-core-1.5.0-1 C:\Users\taukir\.gradle\caches\8.10.2\transforms\fa03b2955bf843514bab2f6bfc5026e3\transformed\core-1.5.0\res
-com.minecraftcompanion.test.app-androidTest-2 D:\MineCraftInstaller\app\build\generated\res\resValues\androidTest\debug
-com.minecraftcompanion.test.app-mergeDebugAndroidTestResources-3 D:\MineCraftInstaller\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
-com.minecraftcompanion.test.app-mergeDebugAndroidTestResources-4 D:\MineCraftInstaller\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
-com.minecraftcompanion.test.app-debugAndroidTest-5 D:\MineCraftInstaller\app\build\intermediates\merged_res\debugAndroidTest\mergeDebugAndroidTestResources
+com.acimis.minecraftinstaller.test.app-annotation-experimental-1.3.0-0 C:\Users\taukir\.gradle\caches\8.10.2\transforms\a8df742a88043c2c4001c193e3c63aa4\transformed\annotation-experimental-1.3.0\res
+com.acimis.minecraftinstaller.test.app-core-1.5.0-1 C:\Users\taukir\.gradle\caches\8.10.2\transforms\fa03b2955bf843514bab2f6bfc5026e3\transformed\core-1.5.0\res
+com.acimis.minecraftinstaller.test.app-androidTest-2 D:\MineCraftInstaller\app\build\generated\res\resValues\androidTest\debug
+com.acimis.minecraftinstaller.test.app-mergeDebugAndroidTestResources-3 D:\MineCraftInstaller\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
+com.acimis.minecraftinstaller.test.app-mergeDebugAndroidTestResources-4 D:\MineCraftInstaller\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
+com.acimis.minecraftinstaller.test.app-debugAndroidTest-5 D:\MineCraftInstaller\app\build\intermediates\merged_res\debugAndroidTest\mergeDebugAndroidTestResources
